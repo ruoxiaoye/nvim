@@ -21,6 +21,9 @@ packer.startup({
     ------------------------------------------------------
     -- 侧边栏文件浏览器
     use({"kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons"})
+    -- bufferline
+    use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" }})
+
   end,
   config = {
     -- 并发数限制
