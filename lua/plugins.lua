@@ -34,8 +34,17 @@ packer.startup({
     ------------------------------------------------------
     -- 侧边栏文件浏览器
     use({"kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons"})
-    -- bufferline
+    -- bufferline 顶部文件标签页
     use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" }})
+    -- lualine 底部状态栏
+    use({"nvim-lualine/lualine.nvim", requires = {"Kyazdani42/nvim-web-devicons"} })
+    use("arkav/lualine-lsp-progress")
+    -- telescope 文件模糊搜索
+    use{"nvim-telescope/telescope.nvim",requires = {"nvim-lua/plenary.nvim"} }
+    -- telescope extensions 
+    use("LinArcX/telescope-env.nvim")
+    -- dashboard-nvim 启动页面插件
+    use("glepnir/dashboard-nvim")
     if packer_bootstrap then
       packer.sync()
     end
