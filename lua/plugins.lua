@@ -1,3 +1,16 @@
+-- 管理自身部分
+local ensure_packer = function()
+local fn = vim.fn
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+  fn.system({'git','clone','--depth','1','https://github.com/wbthomason/packer.nvim',install_path})
+  vim.cmd[[packadd packer.nvim]]
+  return true
+end
+return false
+end
+local packer_bootstrap = ensure_packer()
+-- 插件自动安装部分
 local packer = require("packer")
 packer.startup({
   function(use)
@@ -23,7 +36,9 @@ packer.startup({
     use({"kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons"})
     -- bufferline
     use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" }})
-
+    if packer_bootstrap then
+      packer.sync()
+    end
   end,
   config = {
     -- 并发数限制
