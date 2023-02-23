@@ -16,7 +16,7 @@ lualine.setup({
     -- https://github.com/ryanoasis/powerline-extra-symbols
     section_separators = {
       llft = " ",
-      right = " ",
+      right = " ",
     }, -- 组件分隔符
   },
   -- 扩展设置

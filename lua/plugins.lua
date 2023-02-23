@@ -12,6 +12,7 @@ end
 local packer_bootstrap = ensure_packer()
 -- 插件自动安装部分
 local packer = require("packer")
+local mirror = "https://ghproxy.com/https://github.com"
 packer.startup({
   function(use)
     -- packer 可以管理自己本身
@@ -44,7 +45,16 @@ packer.startup({
     -- telescope extensions 
     use("LinArcX/telescope-env.nvim")
     -- dashboard-nvim 启动页面插件
-    use("glepnir/dashboard-nvim")
+    use({
+      "glepnir/dashboard-nvim", 
+      event = 'VimEnter',
+      config = function()
+        require('dashboard').setup {
+          -- config
+        }
+      end,
+      requires = {'nvim-tree/nvim-web-devicons'}
+    })
     if packer_bootstrap then
       packer.sync()
     end
@@ -58,6 +68,7 @@ packer.startup({
       -- default_url_format = "https://mirror.ghproxy.com/https://github.com/%s",
       -- default_url_format = "https://gitcode.net/mirrors/%s",
       -- default_url_format = "https://gitclone.com/github.com/%s",
+       default_url_format = 'git@github.com:%s'
      },
     -- 以浮动窗口打开安装列表
     display = {
