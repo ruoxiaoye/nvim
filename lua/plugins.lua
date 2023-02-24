@@ -1,13 +1,13 @@
 -- 管理自身部分
 local ensure_packer = function()
-local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system({'git','clone','--depth','1','https://github.com/wbthomason/packer.nvim',install_path})
-  vim.cmd[[packadd packer.nvim]]
-  return true
-end
-return false
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git','clone','--depth','1','https://github.com/wbthomason/packer.nvim',install_path})
+    vim.cmd[[packadd packer.nvim]]
+    return true
+  end
+  return false
 end
 local packer_bootstrap = ensure_packer()
 -- 插件自动安装部分
@@ -45,19 +45,26 @@ packer.startup({
     -- telescope extensions 
     use("LinArcX/telescope-env.nvim")
     -- dashboard-nvim 启动页面插件
-   -- use({
-   --   "glepnir/dashboard-nvim", 
-   --   event = 'VimEnter',
-   --   config = function()
-   --     require('dashboard').setup {
-   --       -- config
-   --     }
-   --   end,
-   --   requires = {'nvim-tree/nvim-web-devicons'}
-   -- })
-   -- 代码高亮，nvim-treesitter
-   use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate",})
-   use("p00f/nvim-ts-rainbow")
+    -- use({
+    --   "glepnir/dashboard-nvim", 
+    --   event = 'VimEnter',
+    --   config = function()
+    --     require('dashboard').setup {
+    --       -- config
+    --     }
+    --   end,
+    --   requires = {'nvim-tree/nvim-web-devicons'}
+    -- })
+    -- 代码高亮，nvim-treesitter
+    use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate",})
+    use("p00f/nvim-ts-rainbow")
+    ------------------------------LSP--------------------------------------------
+    use({"williamboman/mason.nvim"})
+    use({"williamboman/mason-lspconfig.nvim"})
+    -- lsp config 配置lsp工具
+    use({"neovim/nvim-lspconfig"})
+    ------------------------------LSP--------------------------------------------
+
     if packer_bootstrap then
       packer.sync()
     end
@@ -66,17 +73,17 @@ packer.startup({
     -- 并发数限制
     max_jobs = 16,
     -- 自定义源
-     git = {
+    git = {
       -- default_url_format = "https://hub.fastgit.xyz/%s",
       -- default_url_format = "https://mirror.ghproxy.com/https://github.com/%s",
       -- default_url_format = "https://gitcode.net/mirrors/%s",
       -- default_url_format = "https://gitclone.com/github.com/%s",
-       default_url_format = 'git@github.com:%s'
-     },
+      default_url_format = 'git@github.com:%s'
+    },
     -- 以浮动窗口打开安装列表
     display = {
       open_fn = function()
-      return require("packer.util").float({border = "single"})
+        return require("packer.util").float({border = "single"})
       end,
     },
   },

@@ -38,7 +38,7 @@ nvim_tree.setup({
     number = false,
     relativenumber = false,
     -- 显示图标
-    signcolum = 'yes'
+    signcolumn = 'yes'
   },
   actions = {
     open_file = {

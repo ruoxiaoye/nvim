@@ -31,11 +31,9 @@ treesitter.setup({
   },
 })
 
-
-
 -- 代码折叠模块
 vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexjpr()"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- 默认不要折叠
 -- https://stackoverflow,com/questions/
 vim.opt.foldlevel = 99
