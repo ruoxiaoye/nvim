@@ -45,16 +45,19 @@ packer.startup({
     -- telescope extensions 
     use("LinArcX/telescope-env.nvim")
     -- dashboard-nvim 启动页面插件
-    use({
-      "glepnir/dashboard-nvim", 
-      event = 'VimEnter',
-      config = function()
-        require('dashboard').setup {
-          -- config
-        }
-      end,
-      requires = {'nvim-tree/nvim-web-devicons'}
-    })
+   -- use({
+   --   "glepnir/dashboard-nvim", 
+   --   event = 'VimEnter',
+   --   config = function()
+   --     require('dashboard').setup {
+   --       -- config
+   --     }
+   --   end,
+   --   requires = {'nvim-tree/nvim-web-devicons'}
+   -- })
+   -- 代码高亮，nvim-treesitter
+   use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate",})
+   use("p00f/nvim-ts-rainbow")
     if packer_bootstrap then
       packer.sync()
     end

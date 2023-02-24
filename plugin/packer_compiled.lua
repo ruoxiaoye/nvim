@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/home/rxy/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "git@github.com:akinsho/bufferline.nvim"
   },
-  ["dashboard-nvim"] = {
-    loaded = true,
-    path = "/home/rxy/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
-    url = "git@github.com:glepnir/dashboard-nvim"
-  },
   ["lualine-lsp-progress"] = {
     loaded = true,
     path = "/home/rxy/.local/share/nvim/site/pack/packer/start/lualine-lsp-progress",
@@ -98,6 +93,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rxy/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "git@github.com:kyazdani42/nvim-tree.lua"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/rxy/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "git@github.com:nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    path = "/home/rxy/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
+    url = "git@github.com:p00f/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
