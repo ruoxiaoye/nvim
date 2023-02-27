@@ -13,7 +13,7 @@ require("mason-lspconfig").setup({
   ensure_installed = {
     "lua_ls",
     "bashls",
-    "clangd",
+   -- "clangd",
     "cmake",
   },
 })
@@ -40,4 +40,7 @@ for name, config in pairs(servers) do
     lspconfig[name].setup({})
   end
 end
+
+-- config clangd:
+--lspconfig.clangd.setup{}
 
