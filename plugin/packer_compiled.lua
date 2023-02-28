@@ -79,6 +79,36 @@ _G.packer_plugins = {
     path = "/home/rxy/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "git@github.com:akinsho/bufferline.nvim"
   },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/home/rxy/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "git@github.com:hrsh7th/cmp-buffer"
+  },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/home/rxy/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "git@github.com:hrsh7th/cmp-cmdline"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/rxy/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "git@github.com:hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/home/rxy/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "git@github.com:hrsh7th/cmp-path"
+  },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "/home/rxy/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "git@github.com:hrsh7th/cmp-vsnip"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/rxy/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "git@github.com:rafamadriz/friendly-snippets"
+  },
   ["lualine-lsp-progress"] = {
     loaded = true,
     path = "/home/rxy/.local/share/nvim/site/pack/packer/start/lualine-lsp-progress",
@@ -88,6 +118,31 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rxy/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "git@github.com:nvim-lualine/lualine.nvim"
+  },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/home/rxy/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "git@github.com:williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/home/rxy/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "git@github.com:williamboman/mason.nvim"
+  },
+  nivm_cmp = {
+    loaded = true,
+    path = "/home/rxy/.local/share/nvim/site/pack/packer/start/nivm_cmp",
+    url = "git@github.com:hrsh7th/nivm_cmp"
+  },
+  nivm_vsnip = {
+    loaded = true,
+    path = "/home/rxy/.local/share/nvim/site/pack/packer/start/nivm_vsnip",
+    url = "git@github.com:hrsh7th/nivm_vsnip"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/rxy/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "git@github.com:neovim/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
     loaded = true,

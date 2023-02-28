@@ -42,8 +42,8 @@ map("n", "<C-l>","5l",opt)
 map("n", "<C-u>","9k",opt)
 map("n", "<C-d>","9j",opt)
 -- 退出
-map("n", "q",":q<CR>",opt)
-map("n", "qq",":q!<CR>",opt)
+map("n", "qq",":q<CR>",opt)
+map("n", "qqq",":q!<CR>",opt)
 map("n", "Q",":qa!<CR>",opt)
 
 -- visaul 模式下缩进代码
@@ -151,5 +151,30 @@ pluginKeys.mapLSP = function(mapbuf)
   mapbuf("n","gk","<cmd>lspsaga diagnostic_jump_prev<CR>",opt)
   mapbuf("n","<leader>f","<cmd>lua vim.lsp.buf.formatting()<CR>",opt)
 end
+-- nvim-cmp 自动补全按键映射
+pluginKeys.cmp = function(cmp)
+  return {
+    -- 出现补全
+    ["<A-.>"] = cmp.mapping(cmp.mapping.complete(), {"i","c"}),
+    -- 取消
+    ["<A-,>"] = cmp.mapping({
+      i = cmp.mapping.abort(),
+      c = cmp.mapping.close()
+    }),
+    -- 上一个
+    ["<C-k>"] = cmp.mapping.select_prev_item(),
+    -- 下一个
+    ["<C-j>"] = cmp.mapping.select_next_item(),
+    -- 确认
+    ["<CR>"] = cmp.mapping.confirm({
+      select = true,
+      behavior = cmp.confirmBehavior.Replace
+    }),
+    -- 如果弹窗内容太多，可以滚动
+    ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), {"i","c"}),
+    ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), {"i","c"}),
+  }
+end
+
 
 return pluginKeys

@@ -64,6 +64,21 @@ packer.startup({
     -- lsp config 配置lsp工具
     use({"neovim/nvim-lspconfig"})
     ------------------------------LSP--------------------------------------------
+    ------------------------------代码补全-------------------------------------------
+    -- 补全引擎
+    use("hrsh7th/nivm_cmp")
+    -- snippet引擎
+    use("hrsh7th/nivm_vsnip")
+    -- 补全源
+    use("hrsh7th/cmp-vsnip")
+    use("hrsh7th/cmp-nvim-lsp")
+    use("hrsh7th/cmp-buffer")
+    use("hrsh7th/cmp-path")
+    use("hrsh7th/cmp-cmdline")
+    -- 常见编程语言代码段
+    use("rafamadriz/friendly-snippets")
+
+    ------------------------------代码补全-------------------------------------------
 
     if packer_bootstrap then
       packer.sync()
